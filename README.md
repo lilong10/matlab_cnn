@@ -1,2 +1,4 @@
 # matlab_cnn
-Implementation of CNN train/inference by Matlab
+Implementation of CNN train/inference from scratch in Matlab
+
+
