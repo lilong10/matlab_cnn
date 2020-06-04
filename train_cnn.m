@@ -1,4 +1,4 @@
-% Framework to train CNN implemented in Matlab
+% Framework to train CNN implemented in Matlab by Lilong Shi
 % reference: https://houxianxu.github.io/2015/04/25/support-vector-machine/
 %            https://ljvmiranda921.github.io/notebook/2017/02/11/multiclass-svm/
 clear all;
@@ -116,6 +116,14 @@ load TEST_Y.mat
 
 X = TEST_X ;
 Y = TEST_Y+1;
+
+confMat = confusionmat(Y, pred_ys);
+sum(diag(confMat))/2500
+
+[F0,~] = conv_forward(reshape(X,[num_train,1,6,6]),W0,b0,stride, padding);
+F0 = max(0,reshape(permute(F0,[1 3 4 2]),num_train,[]));
+scores = max(0,(F0*W1+b1))*W2+b2 ;
+[~,pred_ys] = max(scores,[],2);
 
 confMat = confusionmat(Y, pred_ys);
 sum(diag(confMat))/2500
