@@ -1,6 +1,7 @@
 % Framework to train CNN implemented in Matlab by Lilong Shi
 % reference: https://houxianxu.github.io/2015/04/25/support-vector-machine/
 %            https://ljvmiranda921.github.io/notebook/2017/02/11/multiclass-svm/
+%            https://cs231n.github.io/convolutional-networks/
 clear all;
 close all;
 
